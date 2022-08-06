@@ -8,13 +8,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="swapper-console" />
-        <module name="java-bootcamp-bitirme-projesi" />
         <module name="insurance-console" />
+        <module name="hibernate-deneme-1" />
+        <module name="java-bootcamp-bitirme-projesi" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="hibernate-deneme-1" options="-parameters" />
       <module name="insurance-console" options="-parameters" />
       <module name="java-bootcamp-bitirme-projesi" options="-parameters" />
       <module name="swapper-console" options="-parameters" />

@@ -5,7 +5,6 @@ import com.alisimsek.javabootcamp.finalproject.repository.UsersRepository;
 import lombok.Data;
 import org.springframework.stereotype.Service;
 
-
 @Service
 @Data
 public class UsersService {
@@ -20,8 +19,8 @@ public class UsersService {
         return usersRepository.getByEmailPass(email, pass);
     }
 
-    public boolean deleteUser (int id){
-        return usersRepository.deleteUser(id);
+    public boolean deleteUser (Users user){
+        return usersRepository.deleteUser(user);
     }
 
 }

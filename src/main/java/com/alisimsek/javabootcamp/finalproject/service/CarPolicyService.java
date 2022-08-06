@@ -16,5 +16,4 @@ public class CarPolicyService {
     public List<CarPolicy> searchList(String searchQuery) {
         return carPolicyRepository.searchCarPolicyList(searchQuery);
     }
-
 }

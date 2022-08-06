@@ -22,10 +22,10 @@ public class Customer {
 	@Column(name="id")
 	private int id;
 
-	@Column(name="fullName")
+	@Column(name="full_name")
 	private String fullName;
 
-	@Column(name="birthDate")
+	@Column(name="birth_date")
 	private Date birthDate;
 
 	@Column(name="age")
@@ -40,7 +40,7 @@ public class Customer {
 	@Column(name="city")
 	private String city;
 
-	@Column(name="adress")
-	private String adress;
+	@Column(name="address")
+	private String address;
 
 }

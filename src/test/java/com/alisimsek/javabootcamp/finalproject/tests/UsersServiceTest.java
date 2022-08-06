@@ -22,7 +22,7 @@ public class UsersServiceTest {
     public void createUsersTest(){
         Users user = new Users(0,"Test", "Test", "Test");
         int generatedKey = usersService.createUsers(user);
-        boolean actualResult = usersService.deleteUser(generatedKey);
+        boolean actualResult = usersService.deleteUser(user);
         assertThat(actualResult).isEqualTo(true);
     }
 
@@ -31,11 +31,11 @@ public class UsersServiceTest {
         Users user = new Users(0,"Test", "Test", "Test");
         int generatedKey = usersService.createUsers(user);
         user.setId(generatedKey);
-        String email = "Test";
-        String pass = "Test";
+        String email = user.getEmail();
+        String pass = user.getPass();
         Users findUser = usersService.getByEmailPass(email, pass);
         assertThat(findUser).isEqualTo(user);
-        usersService.deleteUser(generatedKey);
+        usersService.deleteUser(user);
     }
 
 }

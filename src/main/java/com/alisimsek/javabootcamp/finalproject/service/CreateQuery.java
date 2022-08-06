@@ -4,7 +4,6 @@ import com.alisimsek.javabootcamp.finalproject.helper.Helper;
 
 public class CreateQuery {
 
-
 //User ekranında soldaki sorgu kriterlerine göre arama query'sini oluşturur.
 	public String search(String startDate, String endDate, String agencyName, String city, String ageMin, String ageMax) {
 		String query = "SELECT car_policy.id, customer.id AS customer_id,"

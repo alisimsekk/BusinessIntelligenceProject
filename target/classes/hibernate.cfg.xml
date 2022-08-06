@@ -7,23 +7,22 @@
 
 
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-        <!-- For performance reasons changed to MyISAM from org.hibernate.dialect.MySQLInnoDBDialect -->
         <property name="dialect">org.hibernate.dialect.PostgresPlusDialect</property>
 
-        <!-- Database Settings -->
         <property name="connection.url">jdbc:postgresql://localhost:5432/insurancecompany</property>
         <property name="connection.username">postgres</property>
         <property name="connection.password">postgres</property>
 
-        <!-- Properties -->
-
-        <property name="connection.autocommit">true</property>
-
+        <property name="connection.autocommit">false</property>
         <property name="hbm2ddl.auto">update</property>
-
         <property name="showsql">true</property>
+        <property name="hibernate.transaction.auto_close_session">false</property>
+        <property name="hibernate.connection.pool_size">100</property>
 
-
+        <mapping class="com.alisimsek.javabootcamp.finalproject.model.Users"></mapping>
+        <mapping class="com.alisimsek.javabootcamp.finalproject.model.Customer"></mapping>
+        <mapping class="com.alisimsek.javabootcamp.finalproject.model.InsuranceAgency"></mapping>
+        <mapping class="com.alisimsek.javabootcamp.finalproject.model.CarPolicy"></mapping>
     </session-factory>
 
 </hibernate-configuration>

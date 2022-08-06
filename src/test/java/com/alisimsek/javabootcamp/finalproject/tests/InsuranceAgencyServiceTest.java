@@ -24,7 +24,7 @@ public class InsuranceAgencyServiceTest {
         InsuranceAgency newInsuranceAgency = new InsuranceAgency(0,"Test InsuranceAgency",
                 "Test InsuranceAgency");
         int generatedKey = insuranceAgencyService.createInsuranceAgency(newInsuranceAgency);
-        boolean actualResult = insuranceAgencyService.deleteInsuranceAgency(generatedKey);
+        boolean actualResult = insuranceAgencyService.deleteInsuranceAgency(newInsuranceAgency);
         assertThat(actualResult).isEqualTo(true);
     }
 
@@ -36,7 +36,7 @@ public class InsuranceAgencyServiceTest {
         newInsuranceAgency.setId(generatedKey);
         InsuranceAgency findInsuranceAgency = insuranceAgencyService.get(generatedKey);
         assertThat(findInsuranceAgency).isEqualTo(newInsuranceAgency);
-        insuranceAgencyService.deleteInsuranceAgency(generatedKey);
+        insuranceAgencyService.deleteInsuranceAgency(newInsuranceAgency);
     }
 
     @Test
@@ -46,7 +46,7 @@ public class InsuranceAgencyServiceTest {
         int generatedKey = insuranceAgencyService.createInsuranceAgency(newInsuranceAgency);
         List<String> insuranceAgencyName = insuranceAgencyService.getAgencyName();
         assertThat(insuranceAgencyName).contains("Test InsuranceAgency");
-        insuranceAgencyService.deleteInsuranceAgency(generatedKey);
+        insuranceAgencyService.deleteInsuranceAgency(newInsuranceAgency);
 
     }
 

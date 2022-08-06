@@ -21,8 +21,8 @@ public class CustomerService {
         return customerRepository.get(id);
     }
 
-    public boolean deleteCustomer (int id){
-        return customerRepository.deleteCustomer(id);
+    public boolean deleteCustomer (Customer customer){
+        return customerRepository.deleteCustomer(customer);
     }
 
     public List<String> getCityName (){

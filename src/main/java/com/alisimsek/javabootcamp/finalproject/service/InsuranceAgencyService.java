@@ -12,15 +12,15 @@ public class InsuranceAgencyService {
         return insuranceAgencyRepository.createInsuranceAgency(newInsuranceAgency);
     }
 
-    public boolean deleteInsuranceAgency(int id){
-        return insuranceAgencyRepository.deleteInsuranceAgency(id);
+    public boolean deleteInsuranceAgency(InsuranceAgency insuranceAgency){
+        return insuranceAgencyRepository.deleteInsuranceAgency(insuranceAgency);
     }
 
     public InsuranceAgency get(int id) {
         return insuranceAgencyRepository.get(id);
     }
 
-    public List<String> getAgencyName (){
+    public List<String> getAgencyName(){
         return insuranceAgencyRepository.getAgencyName();
     }
 

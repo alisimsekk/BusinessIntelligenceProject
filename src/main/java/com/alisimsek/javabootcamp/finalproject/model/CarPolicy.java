@@ -21,28 +21,30 @@ public class CarPolicy {
 	@Column(name="id")
 	private int id;
 
-	@Column(name="customer_id")
+	@ManyToOne
+	@JoinColumn(name = "customer_id", insertable = false, updatable = false)
 	private Customer customer;
 
-	@Column(name="insurance_agency_id")
+	@ManyToOne
+	@JoinColumn(name = "insurance_agency_id", insertable = false, updatable = false)
 	private InsuranceAgency insuranceAgency;
 
-	@Column(name="carMake")
+	@Column(name="car_make")
 	private String carMake;
 
-	@Column(name="carYear")
+	@Column(name="car_year")
 	private int carYear;
 
-	@Column(name="transactionDate")
+	@Column(name="transaction_date")
 	private Date transactionDate;
 
-	@Column(name="effectiveDate")
+	@Column(name="effective_date")
 	private Date effectiveDate;
 
-	@Column(name="expirationDate")
+	@Column(name="expiration_date")
 	private Date expirationDate;
 
 	@Column(name="price")
-	private float price;
+	private double price;
 
 }

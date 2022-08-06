@@ -25,33 +25,31 @@ public class CustomerServiceTest {
     @Test
     public void createCustomerTest(){
         Date date = new Date(1993-01-01);
-        Customer customer = new Customer(0,"Test Customer", date, 29, "Test Customer",
-                "Test Customer","Test Customer", "Test Customer");
+        Customer customer = new Customer(0,"Test", date, 29, "Test","Test","Test", "Test");
         int generatedKey = customerService.createCustomer(customer);
-        boolean actualResult = customerService.deleteCustomer(generatedKey);
+        boolean actualResult = customerService.deleteCustomer(customer);
         assertThat(actualResult).isEqualTo(true);
     }
 
     @Test
     public void getCustomerTest(){
         Date date = new Date(1993-01-01);
-        Customer newCustomer = new Customer(0,"Test Customer", date, 29, "Test Customer",
-                "Test Customer","Test Customer", "Test Customer");
+        Customer newCustomer = new Customer(0,"Test", date, 29, "Test",
+                "Test","Test", "Test");
         int generatedKey = customerService.createCustomer(newCustomer);
         newCustomer.setId(generatedKey);
         Customer findCustomer = customerService.get(generatedKey);
         assertThat(findCustomer).isEqualTo(newCustomer);
-        customerService.deleteCustomer(generatedKey);
+        customerService.deleteCustomer(newCustomer);
     }
 
     @Test
     public void getCityNameTest(){
         Date date = new Date(1993-01-01);
-        Customer newCustomer = new Customer(0,"Test Customer", date, 29, "Test Customer",
-                "Test Customer","Test Customer", "Test Customer");
+        Customer newCustomer = new Customer(0,"Test", date, 29, "Test", "Test","Test", "Test");
         int generatedKey = customerService.createCustomer(newCustomer);
         List<String> customersCityName = customerService.getCityName();
-        assertThat(customersCityName).contains("Test Customer");
-        customerService.deleteCustomer(generatedKey);
+        assertThat(customersCityName).contains("Test");
+        customerService.deleteCustomer(newCustomer);
     }
 }
